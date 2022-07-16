@@ -6,7 +6,7 @@
 /*   By: Juyeong Maing <jmaing@student.42seoul.kr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 20:30:02 by Juyeong Maing     #+#    #+#             */
-/*   Updated: 2022/07/16 20:31:01 by Juyeong Maing    ###   ########.fr       */
+/*   Updated: 2022/07/16 20:43:17 by Juyeong Maing    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,3 @@ void	ft_putnbr_fd(int n, int fd)
 {
 	dprintf(fd, "%d", n);
 }
-
