@@ -4,7 +4,7 @@ if ! ./checker "$1"; then
   echo "File $1 has disallowed characters"
 fi
 
-if ! norminette "$1" > "$1.norm.txt"; then
+if [ "$SKIP_NORMINETTE" = "1" ] || ! norminette "$1" > "$1.norm.txt"; then
   echo "Norm error on $1"
   cat "$1.norm.txt"
   exit 1

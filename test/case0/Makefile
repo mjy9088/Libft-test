@@ -78,9 +78,11 @@ test: init refresh | bin
 	@echo "1. Makefile and libft.h"
 	$Q./checker < libft/Makefile || ("File Makefile has disallowed characters" && false)
 	$Q./checker < libft/libft.h || ("File libft.h has disallowed characters" && false)
+ifneq ($(SKIP_NORMINETTE), 1)
 	$Qnorminette libft/libft.h > libft/libft.h.norm.txt || (echo "Norm error on libft.h" && cat libft/libft.h.norm.txt && false)
+endif
 	@echo "2. C files"
-	$Qfind libft | sort -name "*.c" | xargs -L1 sh checker.sh
+	$QSKIP_NORMINETTE=$(SKIP_NORMINETTE) find libft | sort -name "*.c" | xargs -L1 sh checker.sh
 	$Q$(MAKE) clean
 
 .PHONY: all clean fclean re init deinit reinit refresh test
